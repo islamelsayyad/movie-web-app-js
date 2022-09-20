@@ -31,7 +31,7 @@ const mainContent = document.querySelector(".main__content__wrapper");
 let BASE_URL = `https://api.themoviedb.org/3/`;
 let API_KEY = `api_key=032c396973b89249aed62dd743369116`;
 
-const IMG_URL = `https://image.tmdb.org/t/p/w500`;
+const IMG_URL = `https://image.tmdb.org/t/p/w300`;
 const TREND_URL = `https://api.themoviedb.org/3/trending/movie/week?` + API_KEY;
 
 function getTrendingMovies(URL) {
@@ -66,7 +66,7 @@ function showTrendingItems(data) {
 
   function headerElements() {
     background.style.backgroundImage = `url(${
-      `https://image.tmdb.org/t/p/original` + items[itemNum].backdrop_path
+      `https://image.tmdb.org/t/p/w1280` + items[itemNum].backdrop_path
     })`;
 
     title.textContent = items[itemNum].title;

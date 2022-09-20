@@ -23,9 +23,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  -webkit-box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.23);
-  box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.2);
 
   transition: background-image 2s;
   -webkit-transition: background-image 2s;
@@ -42,7 +42,7 @@
   height: 100%;
   width: 100%;
 
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.42);
 
   z-index: 10;
 }
