@@ -40,12 +40,12 @@
   }
 
   .footer__wrapper {
-    padding: 2em 1.5em;
+    padding: 3em 1.5em 1.5em;
   }
 
   .footer__wrapper p {
     font-family: "Roboto Mono", monospace;
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 }
 

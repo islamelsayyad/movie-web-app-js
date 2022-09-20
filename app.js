@@ -122,7 +122,7 @@ function showTrendingItems(data) {
   }, 13000);
 }
 
-for (let i = 1; i <= 60; i++) {
+for (let i = 1; i <= 64; i++) {
   setTimeout(() => {
     let API_URL =
       BASE_URL +
@@ -131,7 +131,7 @@ for (let i = 1; i <= 60; i++) {
       `&language=en-US&include_adult=false&include_video=false&page=${i}&with_watch_monetization_types=flatrate`;
 
     getMovies(API_URL);
-  }, Math.pow(i - 1, 1.5) * 100);
+  }, (i - 2) * 800);
 }
 
 function getMovies(URL) {

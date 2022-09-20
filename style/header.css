@@ -63,7 +63,7 @@
 .nav__bar .logo p {
   font-size: 1.2rem;
   font-weight: 800;
-  opacity: 0.72;
+  opacity: 0.86;
 }
 
 .header__container .header__content__wrapper {
@@ -74,7 +74,7 @@
   justify-content: center;
   gap: 1em 0;
 
-  height: calc(100% - (2.5em * 2));
+  max-height: calc(100% - (2.5em * 2));
   padding: 0 2.5em;
 
   z-index: 100;
