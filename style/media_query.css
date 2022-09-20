@@ -14,7 +14,7 @@
   }
 
   .header__container .header__content__wrapper {
-    padding: 0 1.5em;
+    padding: 2.5em 1.5em;
   }
 
   .overview__wrapper .subtitle {
@@ -40,12 +40,14 @@
   }
 
   .footer__wrapper {
-    padding: 3em 1.5em 1.5em;
+    margin: 0 0 2.5em;
+    padding: 0 1.5em;
   }
 
   .footer__wrapper p {
     font-family: "Roboto Mono", monospace;
     font-size: 0.75rem;
+    line-height: 1.6;
   }
 }
 

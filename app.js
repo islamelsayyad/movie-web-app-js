@@ -122,7 +122,7 @@ function showTrendingItems(data) {
   }, 13000);
 }
 
-for (let i = 1; i <= 64; i++) {
+for (let i = 1; i <= 150; i++) {
   setTimeout(() => {
     let API_URL =
       BASE_URL +
@@ -131,7 +131,7 @@ for (let i = 1; i <= 64; i++) {
       `&language=en-US&include_adult=false&include_video=false&page=${i}&with_watch_monetization_types=flatrate`;
 
     getMovies(API_URL);
-  }, (i - 2) * 800);
+  }, (i - 10) * 50);
 }
 
 function getMovies(URL) {
@@ -148,32 +148,34 @@ function getDiscoverItems(data) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        data.genres.forEach((genre) => {
-          if (genre.name === "Animation") {
-            let element = document.createElement("span");
-            mainContent.appendChild(element);
+        if (data.vote_count >= 5000) {
+          data.genres.forEach((genre) => {
+            if (genre.name === "Animation") {
+              let element = document.createElement("span");
+              mainContent.appendChild(element);
 
-            let poster = document.createElement("div");
-            poster.classList.add("poster");
-            element.appendChild(poster);
+              let poster = document.createElement("div");
+              poster.classList.add("poster");
+              element.appendChild(poster);
 
-            let href = document.createElement("a");
-            href.setAttribute("target", "_blank");
-            poster.appendChild(href);
+              let href = document.createElement("a");
+              href.setAttribute("target", "_blank");
+              poster.appendChild(href);
 
-            let img = document.createElement("span");
-            img.classList.add("img");
-            href.appendChild(img);
-            img.style.backgroundImage = `url(${IMG_URL + item.poster_path})`;
+              let img = document.createElement("span");
+              img.classList.add("img");
+              href.appendChild(img);
+              img.style.backgroundImage = `url(${IMG_URL + item.poster_path})`;
 
-            let title = document.createElement("p");
-            title.classList.add("title");
-            element.appendChild(title);
-            title.textContent = item.title;
+              let title = document.createElement("p");
+              title.classList.add("title");
+              element.appendChild(title);
+              title.textContent = item.title;
 
-            getLink(href);
-          }
-        });
+              getLink(href);
+            }
+          });
+        }
       });
 
     function getLink(href) {
