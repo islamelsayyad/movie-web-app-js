@@ -131,7 +131,7 @@ for (let i = 1; i <= 150; i++) {
       `&language=en-US&include_adult=false&include_video=false&page=${i}&with_watch_monetization_types=flatrate`;
 
     getMovies(API_URL);
-  }, (i - 10) * 50);
+  }, (i - 5) * 100);
 }
 
 function getMovies(URL) {
