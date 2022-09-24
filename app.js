@@ -45,8 +45,9 @@ function getTrendingMovies(URL) {
 getTrendingMovies(TREND_URL);
 
 function showTrendingItems(data) {
+  const items = [];
   let itemNum = 0;
-  let items = [];
+  let randomValue = randomBackground();
 
   function randomBackground() {
     let randomValue = Math.floor(Math.random() * data.results.length);
@@ -58,13 +59,12 @@ function showTrendingItems(data) {
     }
     return randomValue;
   }
-  let randomValue = randomBackground();
 
   for (let i = randomValue; i < randomValue + 3; i++) {
     items.push(data.results[i]);
   }
 
-  function headerElements() {
+  function createHeaderElements() {
     background.style.backgroundImage = `url(${
       `https://image.tmdb.org/t/p/w1280` + items[itemNum].backdrop_path
     })`;
@@ -102,7 +102,8 @@ function showTrendingItems(data) {
 
     getLink();
   }
-  headerElements();
+
+  createHeaderElements();
 
   setInterval(() => {
     if (itemNum > sliderItems.length - 2) {
@@ -113,7 +114,7 @@ function showTrendingItems(data) {
 
     sliderItems.forEach((slider, idx) => {
       if (idx == itemNum) {
-        headerElements();
+        createHeaderElements();
         slider.style.backgroundColor = `#fff`;
       } else {
         slider.style.backgroundColor = `rgba(255, 255, 255, 0.175)`;
@@ -122,16 +123,15 @@ function showTrendingItems(data) {
   }, 13000);
 }
 
-for (let i = 1; i <= 150; i++) {
+for (let i = 1; i <= 250; i++) {
   setTimeout(() => {
     let API_URL =
       BASE_URL +
       `discover/movie?` +
       API_KEY +
       `&language=en-US&include_adult=false&include_video=false&page=${i}&with_watch_monetization_types=flatrate`;
-
     getMovies(API_URL);
-  }, (i - 5) * 100);
+  }, i * 60);
 }
 
 function getMovies(URL) {
@@ -148,7 +148,7 @@ function getDiscoverItems(data) {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        if (data.vote_count >= 5000) {
+        if (data.vote_count >= 2500) {
           data.genres.forEach((genre) => {
             if (genre.name === "Animation") {
               let element = document.createElement("span");

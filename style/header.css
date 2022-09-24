@@ -28,11 +28,11 @@
   -moz-box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 0px 118px 8px rgba(0, 0, 0, 0.2);
 
-  transition: background-image 2s;
-  -webkit-transition: background-image 2s;
-  -moz-transition: background-image 2s;
-  -o-transition: background-image 2s;
-  -ms-transition: background-image 2s;
+  transition: background-image 0.5s;
+  -webkit-transition: background-image 0.5s;
+  -moz-transition: background-image 0.5s;
+  -o-transition: background-image 0.5s;
+  -ms-transition: background-image 0.5s;
 }
 
 .header__container::after {
